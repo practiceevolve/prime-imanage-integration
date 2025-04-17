@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Contracts\Workspace\WorkspaceUpdateRequestContractResolver - Copy.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ApiTypes\Document\ApiDocumentUploadRequest.json1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ApiTypes\ApiTypesToPocos.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ApiTypesToPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Contracts\ContractResolver.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContractResolver.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Contracts\ContractResolvers.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContractResolvers.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ApiTypes\ApiTypesToPocos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ApiTypesToPocos.cs</LastGenOutput>
+    </None>
+    <None Update="Contracts\ContractResolvers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ContractResolvers.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contracts\CustomField\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

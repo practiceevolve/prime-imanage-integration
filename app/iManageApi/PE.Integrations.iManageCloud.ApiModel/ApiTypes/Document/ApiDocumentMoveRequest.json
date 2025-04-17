@@ -1,0 +1,9 @@
+{
+  "audit": {
+    "comments": "string"
+  },
+  "destination_folder_id": "string",
+  "destination_id": "string",
+  "update_profile": "boolean",
+  "update_security": "boolean"
+}

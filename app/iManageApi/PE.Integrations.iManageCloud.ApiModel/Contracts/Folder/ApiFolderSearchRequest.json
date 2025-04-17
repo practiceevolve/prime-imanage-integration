@@ -1,0 +1,15 @@
+{
+  "limit": "integer",
+  "timezone_offset": "integer",
+  "profile_fields": {
+    "folder": [
+      "string"
+    ]
+  },
+  "filters": {
+    "libraries": "string",
+    "container_id": "string",
+    "include_ids": "string",
+    "name": "string"
+  }
+}

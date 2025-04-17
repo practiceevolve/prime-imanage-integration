@@ -1,0 +1,9 @@
+<Project>
+    <PropertyGroup>
+        <Version>0.1.1.0</Version>
+    </PropertyGroup>
+
+  <PropertyGroup>
+    <DotNetCoreVersion>3.1.2</DotNetCoreVersion>
+  </PropertyGroup>
+</Project>

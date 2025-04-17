@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IManage", "IManage.csproj", "{F2E5FDA9-5921-4FC3-B153-FAAB4C01386F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PE.Integrations.iManageCloud.Domain", "iManageApi\PE.Integrations.iManageCloud.Domain\PE.Integrations.iManageCloud.Domain.csproj", "{A2FD49DE-8625-46D9-BE6B-F6F6B6140F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PE.Integrations.iManageCloud.ApiModel", "iManageApi\PE.Integrations.iManageCloud.ApiModel\PE.Integrations.iManageCloud.ApiModel.csproj", "{14C2033A-D619-47B9-A695-065A882D8E6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iManageApi", "iManageApi", "{E6BC6881-ADF7-4868-ADE8-5423F07AEAE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PE.Integrations.iManageCloud", "iManageApi\PE.Integrations.iManageCloud\PE.Integrations.iManageCloud.csproj", "{2A1CFC6E-19B0-4E2D-9A6A-454E418CAF1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2E5FDA9-5921-4FC3-B153-FAAB4C01386F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E5FDA9-5921-4FC3-B153-FAAB4C01386F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E5FDA9-5921-4FC3-B153-FAAB4C01386F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E5FDA9-5921-4FC3-B153-FAAB4C01386F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2FD49DE-8625-46D9-BE6B-F6F6B6140F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2FD49DE-8625-46D9-BE6B-F6F6B6140F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2FD49DE-8625-46D9-BE6B-F6F6B6140F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2FD49DE-8625-46D9-BE6B-F6F6B6140F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C2033A-D619-47B9-A695-065A882D8E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C2033A-D619-47B9-A695-065A882D8E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C2033A-D619-47B9-A695-065A882D8E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C2033A-D619-47B9-A695-065A882D8E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A1CFC6E-19B0-4E2D-9A6A-454E418CAF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A1CFC6E-19B0-4E2D-9A6A-454E418CAF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A1CFC6E-19B0-4E2D-9A6A-454E418CAF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A1CFC6E-19B0-4E2D-9A6A-454E418CAF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2FD49DE-8625-46D9-BE6B-F6F6B6140F30} = {E6BC6881-ADF7-4868-ADE8-5423F07AEAE6}
+		{14C2033A-D619-47B9-A695-065A882D8E6D} = {E6BC6881-ADF7-4868-ADE8-5423F07AEAE6}
+		{2A1CFC6E-19B0-4E2D-9A6A-454E418CAF1A} = {E6BC6881-ADF7-4868-ADE8-5423F07AEAE6}
+	EndGlobalSection
+EndGlobal

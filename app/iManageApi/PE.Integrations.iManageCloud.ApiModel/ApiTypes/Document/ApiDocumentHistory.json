@@ -1,0 +1,23 @@
+{
+  "document_number": "integer",
+  "version": "integer",
+  "activity": "string",
+  "application_name": "string",
+  "activity_date": "datetime",
+  "duration": "integer",
+  "pages_printed": "integer",
+  "user": "string",
+  "activity_code": "integer",
+  "location": "string",
+  "comments": "string",
+  "data1": "string",
+  "data2": "string",
+  "num1": "string",
+  "num2": "string",
+  "num3": "string",
+  "id": "string",
+  "has_journal": "boolean",
+  "user_fullname": "string",
+  "database": "string",
+  "document_id": "string"
+}

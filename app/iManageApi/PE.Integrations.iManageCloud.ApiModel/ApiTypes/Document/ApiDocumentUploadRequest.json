@@ -1,0 +1,35 @@
+{
+  "warnings_for_required_and_disabled_fields": "boolean",
+  "keep_locked": "boolean",
+  "audit": {
+    "comments": "string"
+  },
+  "doc_profile": {
+    "name": "string",
+    "extension": "string",
+    "type": "string",
+    "size": "integer",
+    "author": "string",
+    "checksum": "string",
+    "class": "string",
+    "content_type": "string",
+    "default_security": "string",
+    "file_create_date": "datetime",
+    "file_edit_date": "datetime",
+    "is_hipaa": "boolean",
+    "retain_days": "integer",
+    "operator": "string"
+  },
+  "user_trustees": [
+    {
+      "id": "string",
+      "access_level": "string"
+    }
+  ],
+  "group_trustees": [
+    {
+      "id": "string",
+      "access_level": "string"
+    }
+  ]
+}

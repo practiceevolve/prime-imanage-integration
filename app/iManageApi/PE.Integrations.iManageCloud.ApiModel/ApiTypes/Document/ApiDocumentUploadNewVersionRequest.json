@@ -1,0 +1,26 @@
+{
+  "audit": {
+    "comments": "string"
+  },
+  "doc_profile": {
+    "author": "string",
+    "checksum": "string",
+    "class": "string",
+    "extension": "string",
+    "type": "string"
+  },
+  "group_trustees": [
+    {
+      "id": "string",
+      "access_level": "string"
+    }
+  ],
+  "keep_locked": "boolean",
+  "user_trustees": [
+    {
+      "id": "string",
+      "access_level": "string"
+    }
+  ],
+  "warnings_for_required_and_disabled_fields": "boolean"
+}

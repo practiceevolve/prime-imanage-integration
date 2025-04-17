@@ -1,0 +1,63 @@
+{
+  "default_security": "string",
+  "description": "Projects.string or nil",
+  "email": "Projects.string or nil",
+  "group_trustees": [
+    {
+      "id": "string",
+      "access_level": "string"
+    }
+  ],
+  "is_external_as_normal": "Projects.boolean or nil",
+  "name": "string",
+  "owner": "Projects.string or nil",
+  "parent_id": "Projects.string or nil",
+  "profile": {
+    "author": "string",
+    "class": "string",
+    "subclass": "string",
+    "custom1": "string",
+    "custom2": "string",
+    "custom3": "string",
+    "custom4": "string",
+    "custom5": "string",
+    "custom6": "string",
+    "custom7": "string",
+    "custom8": "string",
+    "custom9": "string",
+    "custom10": "string",
+    "custom11": "string",
+    "custom12": "string",
+    "custom13": "string",
+    "custom14": "string",
+    "custom15": "string",
+    "custom16": "string",
+    "custom17": "number",
+    "custom18": "number",
+    "custom19": "number",
+    "custom20": "number",
+    "custom21": "datetime",
+    "custom22": "datetime",
+    "custom23": "datetime",
+    "custom24": "datetime",
+    "custom25": "boolean",
+    "custom26": "boolean",
+    "custom27": "boolean",
+    "custom28": "boolean",
+    "custom29": "string",
+    "custom30": "string",
+    "custom31": "string",
+    "description": "string",
+    "doc_type": "string",
+    "operator": "string"
+  },
+  "project_custom1": "Projects.string or nil",
+  "project_custom2": "Projects.string or nil",
+  "project_custom3": "Projects.string or nil",
+  "user_trustees": [
+    {
+      "id": "string",
+      "access_level": "string"
+    }
+  ]
+}

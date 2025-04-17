@@ -1,0 +1,17 @@
+{
+  "error": {
+    "code": "string",
+    "code_message": "string",
+    "dms_version": "string",
+    "transaction": "string",
+    "messages": [
+      {
+        "audit": "object",
+        "code": "string",
+        "code_message": "string",
+        "field": "string",
+        "data": "object | array | string | integer"
+      }
+    ]
+  }
+}

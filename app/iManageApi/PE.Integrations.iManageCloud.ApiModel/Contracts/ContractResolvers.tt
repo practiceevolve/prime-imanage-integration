@@ -1,0 +1,45 @@
+﻿<#@ template hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Runtime" #>
+<#@ assembly name="Microsoft.CSharp" #>
+<#@ assembly name="Newtonsoft.Json" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Runtime.CompilerServices" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ import namespace="System.Dynamic" #>
+<#@ import namespace="System.Globalization" #>
+<#@ output extension=".cs" #>
+//Auto generated - do not modify
+using System.Collections.Generic;
+
+namespace PE.Integrations.iManageCloud.ApiModel.Contracts {
+<#
+    var path = this.Host.ResolvePath(".");
+    foreach (string d in Directory.GetDirectories(path)) {
+        foreach (var file in Directory.GetFiles(d, "*.json", SearchOption.AllDirectories)) {
+            Emit(file);
+        }
+    }
+#>
+}
+<#+ void Emit(string jsonFilePath) {
+    var jsonFileName = Path.GetFileNameWithoutExtension(jsonFilePath);
+    var typeName = $"{jsonFileName}ContractResolver";
+    dynamic json = JsonConvert.DeserializeObject<ExpandoObject>(File.ReadAllText(jsonFilePath));
+    var props = (IDictionary<String, Object>)json;
+#>
+    public class <#= typeName #> : ContractResolverBase {
+        public static <#= typeName #> Instance { get; } = new <#= typeName #>();
+        protected override HashSet<string> Properties =>
+            new HashSet<string>(
+                new string[] {
+<#+ foreach (var prop in props) { #>
+                    "<#= prop.Key #>",
+<#+ } #>
+                }
+            );
+    }
+<#+ } #>

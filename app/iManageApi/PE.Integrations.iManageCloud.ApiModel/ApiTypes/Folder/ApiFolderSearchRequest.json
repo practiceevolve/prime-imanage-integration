@@ -1,0 +1,20 @@
+{
+  "limit": "integer",
+  "timezone_offset": "integer",
+  "profile_fields": {
+    "folder": [
+      "string"
+    ]
+  },
+  "filters": {
+    "libraries": "string",
+    "container_id": "string",
+    "email": "string",
+    "include_ids": "string",
+    "name": "string",
+    "name_or_description": "string",
+    "owner": "string",
+    "reference_database": "string",
+    "workspace_name": "string"
+  }
+}

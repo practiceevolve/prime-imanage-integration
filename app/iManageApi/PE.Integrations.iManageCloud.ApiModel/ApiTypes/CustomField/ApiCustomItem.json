@@ -1,0 +1,9 @@
+{
+  "description": "string",
+  "enabled": "boolean",
+  "hipaa": "boolean",
+  "id": "string",
+  "parent": {
+    "id": "string"
+  }
+}

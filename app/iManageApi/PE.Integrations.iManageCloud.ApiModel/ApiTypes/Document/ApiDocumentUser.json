@@ -1,0 +1,8 @@
+{
+  "activity_count": "integer",
+  "email": "string",
+  "full_name": "string",
+  "id": "string",
+  "login": "boolean",
+  "wstype":  "string"
+}

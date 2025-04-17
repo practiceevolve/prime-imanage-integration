@@ -1,0 +1,147 @@
+﻿<#@ template hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Runtime" #>
+<#@ assembly name="Microsoft.CSharp" #>
+<#@ assembly name="Newtonsoft.Json" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Runtime.CompilerServices" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ import namespace="System.Dynamic" #>
+<#@ import namespace="System.Globalization" #>
+<#@ output extension=".cs" #>
+//Auto generated - do not modify
+using System;
+using Newtonsoft.Json;
+
+namespace PE.Integrations.iManageCloud.ApiModel.ApiTypes {
+<#
+    var path = this.Host.ResolvePath(".");
+    foreach (string d in Directory.GetDirectories(path)) {
+        foreach (var file in Directory.GetFiles(d, "*.json", SearchOption.AllDirectories)) {
+            Emit(file);
+        }
+    }
+#>
+}
+
+<#+ void Emit(string jsonFilePath) {
+    var jsonFileName = Path.GetFileNameWithoutExtension(jsonFilePath);
+    var typeName = jsonFileName;
+    dynamic json = JsonConvert.DeserializeObject<ExpandoObject>(File.ReadAllText(jsonFilePath));
+    var props = (IDictionary<String, object>)json;
+    //if (props.ContainsKey("data")) props = (IDictionary<String, Object>)json.data;
+#>
+    public class <#= char.ToUpper(typeName[0]) + typeName.Substring(1) #> {
+<#+ EmitProps(props); #>
+    }
+<#+ } #>
+
+
+
+<#+ void EmitProps(IDictionary<String, object> props) {
+foreach (var prop in props) { 
+        var type = ToCsType(prop.Value);
+        var name = ToPascalCase(prop.Key);
+        if (type == "object") {
+            var _props = (IDictionary<String, object>)prop.Value;
+            string className = $"{name}Class ";
+#>
+        public class <#= className #> {
+<#+ EmitProps(_props); #>
+        }
+        [JsonProperty("<#= prop.Key #>")] public <#= className #> <#= name #> { get; set; }
+<#+
+        }
+        else if (type == "array") {
+            var lst = (List<object>)prop.Value;
+            dynamic exp = lst[0];
+            var _type = ToCsType(exp);
+            if (_type == "object") {
+                var _props = exp as IDictionary<string, object>;
+                string className = $"{name}Class ";
+#>
+        public class <#= className #> {
+<#+ EmitProps(_props); #>
+        }
+        [JsonProperty("<#= prop.Key #>")] public <#= className #>[] <#= name #> { get; set; }
+<#+
+            }
+            else if (_type == "array") {
+                throw new InvalidOperationException("Array of Array not supported");
+            }
+            else if (_type != null) { 
+#>
+        [JsonProperty("<#= prop.Key #>")] public <#= _type #>[] <#= name #> { get; set; }
+<#+
+            }
+        }
+        else if (type != null) {
+#>
+        [JsonProperty("<#= prop.Key #>")] public <#= type #> <#= name #> { get; set; }
+<#+ 
+        }
+#>
+<#+ } }#>
+
+<#+
+string GetTypeName([CallerFilePath] string file = "") {
+    return Path.GetFileNameWithoutExtension(file);
+}
+string ToPascalCase(string s) {
+    System.Text.StringBuilder resultBuilder = new System.Text.StringBuilder();
+
+    foreach(char c in s)
+    {
+        // Replace anything, but letters and digits, with space
+        if(!Char.IsLetterOrDigit(c))
+        {
+            resultBuilder.Append(" ");
+        }
+        else 
+        { 
+            resultBuilder.Append(c); 
+        }
+    }
+
+    string result = resultBuilder.ToString();
+
+    // Make result string all lowercase, because ToTitleCase does not change all uppercase correctly
+    result = result.ToLower();
+
+    // Creates a TextInfo based on the "en-US" culture.
+    TextInfo myTI = new CultureInfo("en-US",false).TextInfo;
+
+    result = myTI.ToTitleCase(result).Replace(" ", String.Empty);
+    return result;
+}
+string ToCsType(object d) {
+    string res = null;
+    switch(d) {
+        case string s when s == "boolean":
+            res = "bool?";
+            break;
+        case string s when s == "string":
+            res = "string";
+            break;
+        case string s when s == "number":
+            res = "decimal?";
+            break;
+        case string s when s == "datetime":
+            res = "DateTime?";
+            break;
+        case string s when s == "integer":
+            res = "int?";
+            break;
+        case List<object> arr:
+            res = "array";
+            break;
+        case ExpandoObject dyn:
+            res = "object";
+            break;
+    }
+    return res;
+}
+#>
